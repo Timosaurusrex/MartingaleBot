@@ -1,6 +1,6 @@
 #Grid Trading Bot, which interacts with the binance api
 #© Written by Timo Perzi and Christoph Handschuh, on 31-03-2022
-print("© Written by Timo Perzi and Christoph Handschuh, on 31-03-2022")
+print("© Written by Timo Perzi and Christoph Handschuh, on 31-03-2022, Version: 3.0")
 
 import json
 import sys
@@ -27,18 +27,19 @@ with open("back_up.txt", "r") as f:  #Restore everything
     tradenum = float(f.readline())
 
 def kill(update: Update, context: CallbackContext):
-    update.message.reply_text("killed!!!")
-    sys.exit(0)
+    update.message.reply_text("Code killed!!!")
+    print("Program killed!")
+    sys.exit()
 
 def start(update: Update, context: CallbackContext):
     global run
     run = True
-    update.message.reply_text("started!!!")
+    update.message.reply_text("Code started!!!")
 
 def stop(update: Update, context: CallbackContext):
     global run
     run = False
-    update.message.reply_text("stopped!!!")
+    update.message.reply_text("Code stopped!!!")
 
 def on_open(ws):
     global bricks, rsi
